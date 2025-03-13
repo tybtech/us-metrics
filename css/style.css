@@ -6,7 +6,11 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                      url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     padding: 20px;
 }
 
@@ -16,7 +20,42 @@ body {
     padding: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #3c3b6e;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #b22234;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #3c3b6e;
+}
+
+.president-image {
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #ddd;
+}
+
+.title-container {
+    text-align: center;
+    flex-grow: 1;
 }
 
 h1 {
@@ -35,19 +74,47 @@ h1 {
 
 .presidency-toggle button {
     padding: 10px 15px;
-    border: 1px solid #ddd;
+    border: 2px solid #3c3b6e;
     background-color: #f8f8f8;
     cursor: pointer;
     border-radius: 4px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
     transition: all 0.3s ease;
+    color: #3c3b6e;
+}
+
+.presidency-toggle button:hover {
+    background-color: #e8e8e8;
+    transform: translateY(-2px);
 }
 
 .presidency-toggle button.active {
-    background-color: #3498db;
+    background-color: #3c3b6e;
     color: white;
-    border-color: #3498db;
+    border-color: #3c3b6e;
+}
+
+#trump1-btn, #trump2-btn {
+    border-color: #b22234;
+    color: #b22234;
+}
+
+#trump1-btn.active, #trump2-btn.active {
+    background-color: #b22234;
+    color: white;
+    border-color: #b22234;
+}
+
+#biden-btn {
+    border-color: #3c3b6e;
+    color: #3c3b6e;
+}
+
+#biden-btn.active {
+    background-color: #3c3b6e;
+    color: white;
+    border-color: #3c3b6e;
 }
 
 .disclaimer {
@@ -185,6 +252,39 @@ h1 {
     text-align: center;
     font-size: 14px;
     color: #777;
+    margin-bottom: 25px;
+}
+
+.footer {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.footer p {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+}
+
+.flag-stripe {
+    height: 8px;
+    margin-bottom: 2px;
+}
+
+.red {
+    background-color: #b22234;
+}
+
+.white {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+}
+
+.blue {
+    background-color: #3c3b6e;
 }
 
 @media (max-width: 768px) {
@@ -200,6 +300,20 @@ h1 {
         border-right: none;
         border-bottom: 1px solid #eee;
         padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .president-image {
+        margin: 10px 0;
+    }
+    
+    .title-container {
+        order: -1;
         margin-bottom: 15px;
     }
 }
