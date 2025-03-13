@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Economic Metrics Comparison</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>US Economic Metrics Comparison</h1>
+        
+        <div class="presidency-toggle">
+            <button id="compare-btn" class="active">Compare All</button>
+            <button id="trump1-btn">Trump 1st Term (2017-2021)</button>
+            <button id="biden-btn">Biden Term (2021-2025)</button>
+            <button id="trump2-btn">Trump 2nd Term (2025-2029)</button>
+        </div>
+        
+        <div class="disclaimer">
+            <p>Note: Data for Trump's 2nd term is projected based on his first term policies and campaign promises.</p>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card" id="inflation">
+                <h2>Inflation Rate</h2>
+                <div class="metric-comparison">
+                    <div class="admin-column">
+                        <h3>Trump (1st)</h3>
+                        <div class="metric-value" id="inflation-trump1-value">Loading...</div>
+                        <div class="metric-range" id="inflation-trump1-range"></div>
+                    </div>
+                    <div class="admin-column">
+                        <h3>Biden</h3>
+                        <div class="metric-value" id="inflation-biden-value">Loading...</div>
+                        <div class="metric-range" id="inflation-biden-range"></div>
+                    </div>
+                    <div class="admin-column">
+                        <h3>Trump (2nd)</h3>
+                        <div class="metric-value" id="inflation-trump2-value">Loading...</div>
+                        <div class="metric-range" id="inflation-trump2-range"></div>
+                        <div class="projected-label">Projected</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="inflation-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="metric-card" id="unemployment">
+                <h2>Unemployment Rate</h2>
+                <div class="metric-comparison">
+                    <div class="admin-column">
+                        <h3>Trump (1st)</h3>
+                        <div class="metric-value" id="unemployment-trump1-value">Loading...</div>
+                        <div class="metric-range" id="unemployment-trump1-range"></div>
+                    </div>
+                    <div class="admin-column">
+                        <h3>Biden</h3>
+                        <div class="metric-value" id="unemployment-biden-value">Loading...</div>
+                        <div class="metric-range" id="unemployment-biden-range"></div>
+                    </div>
+                    <div class="admin-column">
+                        <h3>Trump (2nd)</h3>
+                        <div class="metric-value" id="unemployment-trump2-value">Loading...</div>
+                        <div class="metric-range" id="unemployment-trump2-range"></div>
+                        <div class="projected-label">Projected</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="unemployment-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="metric-card" id="sp500">
+                <h2>S&P 500 Growth</h2>
+                <div class="metric-comparison">
+                    <div class="admin-column">
+                        <h3>Trump (1st)</h3>
+                        <div class="metric-value" id="sp500-trump1-value">Loading...</div>
+                        <div class="metric-range" id="sp500-trump1-range"></div>
+                    </div>
+                    <div class="admin-column">
+                        <h3>Biden</h3>
+                        <div class="metric-value" id="sp500-biden-value">Loading...</div>
+                        <div class="metric-range" id="sp500-biden-range"></div>
+                    </div>
+                    <div class="admin-column">
+                        <h3>Trump (2nd)</h3>
+                        <div class="metric-value" id="sp500-trump2-value">Loading...</div>
+                        <div class="metric-range" id="sp500-trump2-range"></div>
+                        <div class="projected-label">Projected</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="sp500-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="metric-card" id="gas">
+                <h2>Gas Prices (National Avg)</h2>
+                <div class="metric-comparison">
+                    <div class="admin-column">
+                        <h3>Trump (1st)</h3>
+                        <div class="metric-value" id="gas-trump1-value">Loading...</div>
+                        <div class="metric-range" id="gas-trump1-range"></div>
+                    </div>
+                    <div class="admin-column">
+                        <h3>Biden</h3>
+                        <div class="metric-value" id="gas-biden-value">Loading...</div>
+                        <div class="metric-range" id="gas-biden-range"></div>
+                    </div>
+                    <div class="admin-column">
+                        <h3>Trump (2nd)</h3>
+                        <div class="metric-value" id="gas-trump2-value">Loading...</div>
+                        <div class="metric-range" id="gas-trump2-range"></div>
+                        <div class="projected-label">Projected</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="gas-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes">
+            <p>Note: Historical data represents averages during each administration's term. The COVID-19 pandemic (2020-2022) had significant economic impacts across multiple administrations. Trump's 2nd term data is speculative and based on historical trends and policy projections.</p>
+        </div>
+        
+        <div class="last-updated">
+            Last updated: <span id="update-time"></span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
